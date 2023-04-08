@@ -17,14 +17,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
-  chaquopy:
-    dependency: "direct main"
-    description:
-      name: chaquopy
-      sha256: b951b5a0d5c7b4a8627d3d136df7cde1ae71ade6c84cfb9b85cb6adcdb8e797e
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.0.19"
   characters:
     dependency: transitive
     description:
@@ -33,14 +25,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.1"
-  charcode:
-    dependency: transitive
-    description:
-      name: charcode
-      sha256: fb98c0f6d12c920a02ee2d998da788bca066ca5f148492b7085ee23372b12306
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.3.1"
   clock:
     dependency: transitive
     description:
@@ -57,22 +41,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.17.0"
-  convert:
-    dependency: transitive
-    description:
-      name: convert
-      sha256: "3fa83bc417e26f1d55814443a603747d48e3cdf55b2f4fea27dea8e9224dcefd"
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.1.1"
   crypto:
     dependency: transitive
     description:
       name: crypto
-      sha256: "3ce628f3c6a7144be6c524dbb20ca5af52fa59c850c587bf5e52cd70ece8e7e8"
+      sha256: aa274aa7774f8964e4f4f38cc994db7b6158dd36e9187aaceaddc994b35c6c67
       url: "https://pub.dev"
     source: hosted
-    version: "2.1.5"
+    version: "3.0.2"
+  csslib:
+    dependency: transitive
+    description:
+      name: csslib
+      sha256: b36c7f7e24c0bdf1bf9a3da461c837d1de64b9f8beb190c9011d8c72a3dfd745
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.17.2"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -107,6 +91,19 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_web_plugins:
+    dependency: transitive
+    description: flutter
+    source: sdk
+    version: "0.0.0"
+  html:
+    dependency: transitive
+    description:
+      name: html
+      sha256: "79d498e6d6761925a34ee5ea8fa6dfef38607781d2fa91e37523474282af55cb"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.15.2"
   js:
     dependency: transitive
     description:
@@ -155,6 +152,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.2"
+  plugin_platform_interface:
+    dependency: transitive
+    description:
+      name: plugin_platform_interface
+      sha256: "6a2128648c854906c53fa8e33986fc0247a1116122f9534dd20e3ab9e16a32bc"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.1.4"
   sky_engine:
     dependency: transitive
     description: flutter
@@ -176,14 +181,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.11.0"
-  starflut:
-    dependency: "direct main"
-    description:
-      name: starflut
-      sha256: ef23d2b51575979d0280da4d718da96daa408209554f842322e41bcfe799346d
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.0"
   stream_channel:
     dependency: transitive
     description:
@@ -224,14 +221,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.3.1"
-  uuid:
-    dependency: transitive
-    description:
-      name: uuid
-      sha256: bd96a5d86e807b44cac699f9735ef29d1e3354a96f4b2f7152000bae4c6d81b0
-      url: "https://pub.dev"
-    source: hosted
-    version: "2.2.2"
   vector_math:
     dependency: transitive
     description:
@@ -240,6 +229,54 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.4"
+  video_player:
+    dependency: "direct main"
+    description:
+      name: video_player
+      sha256: de95f0e9405f29b5582573d4166132e71f83b3158aac14e8ee5767a54f4f1fbd
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.6.1"
+  video_player_android:
+    dependency: transitive
+    description:
+      name: video_player_android
+      sha256: a592048a711d5739d9cea2255d425779f138d41095b9149bda60ce4bc1af8871
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.4"
+  video_player_avfoundation:
+    dependency: transitive
+    description:
+      name: video_player_avfoundation
+      sha256: "75c6d68cd479a25f34d635149ba6887bc8f1b2b2921841121fd44ea0c5bc1927"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.4.4"
+  video_player_platform_interface:
+    dependency: transitive
+    description:
+      name: video_player_platform_interface
+      sha256: a8c4dcae2a7a6e7cc1d7f9808294d968eca1993af34a98e95b9bdfa959bec684
+      url: "https://pub.dev"
+    source: hosted
+    version: "6.1.0"
+  video_player_web:
+    dependency: transitive
+    description:
+      name: video_player_web
+      sha256: "44ce41424d104dfb7cf6982cc6b84af2b007a24d126406025bf40de5d481c74c"
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.0.16"
+  web_socket_channel:
+    dependency: "direct main"
+    description:
+      name: web_socket_channel
+      sha256: ca49c0bc209c687b887f30527fb6a9d80040b072cc2990f34b9bec3e7663101b
+      url: "https://pub.dev"
+    source: hosted
+    version: "2.3.0"
 sdks:
   dart: ">=2.19.3 <3.0.0"
-  flutter: ">=1.20.0"
+  flutter: ">=3.3.0"

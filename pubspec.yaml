@@ -10,8 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  starflut: ^1.0.0
-  chaquopy: ^0.0.19
+  web_socket_channel: ^2.1.0
+  video_player: ^2.6.1
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
