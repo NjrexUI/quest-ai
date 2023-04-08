@@ -12,6 +12,7 @@ dependencies:
     sdk: flutter
   web_socket_channel: ^2.1.0
   video_player: ^2.6.1
+  path_provider: ^2.0.14
   cupertino_icons: ^1.0.2
 
 dev_dependencies:

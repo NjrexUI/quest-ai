@@ -4,12 +4,10 @@ import 'package:web_socket_channel/web_socket_channel.dart';
 import 'package:web_socket_channel/status.dart' as status;
 
 class WebSocket {
-  // ------------------------- Members ------------------------- //
   late String url;
   WebSocketChannel? _channel;
   StreamController<bool> streamController = StreamController<bool>.broadcast();
 
-  // ---------------------- Getter Setters --------------------- //
   String get getUrl {
     return url;
   }
@@ -26,17 +24,12 @@ class WebSocket {
     }
   }
 
-  // --------------------- Constructor ---------------------- //
   WebSocket(this.url);
 
-  // ---------------------- Functions ----------------------- //
-
-  /// Connects the current application to a websocket
   void connect() async {
     _channel = WebSocketChannel.connect(Uri.parse(url));
   }
 
-  /// Disconnects the current application from a websocket
   void disconnect() {
     if (_channel != null) {
       _channel!.sink.close(status.goingAway);
