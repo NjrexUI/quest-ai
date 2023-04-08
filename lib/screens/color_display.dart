@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'package:flutter/material.dart';
 
 class ColorDisplay extends StatefulWidget {
@@ -10,14 +11,14 @@ class ColorDisplay extends StatefulWidget {
 class _ColorDisplayState extends State<ColorDisplay> {
   Color containerColor = Colors.red;
 
-  void changeColors() {
+  Future changeColors() async{
      while (true) {
-      Future.delayed(const Duration(milliseconds: 500), () {
+      await Future.delayed(const Duration(seconds: 3), () {
         setState(() {
           containerColor = Colors.green;
         });
       });
-      Future.delayed(const Duration(milliseconds: 500), () {
+      await Future.delayed(const Duration(seconds: 3), () {
         setState(() {
           containerColor = Colors.red;
         });
