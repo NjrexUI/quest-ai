@@ -12,14 +12,14 @@ print("Started server on port : ", port)
 async def transmit(websocket, path):
     print("Client Connected !")
     try :
-        file = open("data.txt", "r+")
-
         fourcc = cv2.VideoWriter_fourcc('X','V','I','D')
         out = cv2.VideoWriter("output.avi", fourcc, 5.0, (1280,720))
         ret, frame1 = cap.read()
         ret, frame2 = cap.read()
 
         while cap.isOpened():
+            color = ""
+            
             ret, frame = cap.read()
             if ret == True:
                 gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)

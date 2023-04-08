@@ -4,14 +4,14 @@ import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'websocket.dart';
 
-class VideoStream extends StatefulWidget {
-  const VideoStream({Key? key}) : super(key: key);
+class SecondSection extends StatefulWidget {
+  const SecondSection({Key? key}) : super(key: key);
 
   @override
-  State<VideoStream> createState() => _VideoStreamState();
+  State<SecondSection> createState() => _SecondSectionState();
 }
 
-class _VideoStreamState extends State<VideoStream> {
+class _SecondSectionState extends State<SecondSection> {
   final WebSocket _socket = WebSocket("ws://localhost:5000");
   bool _isConnected = false;
   void connect(BuildContext context) async {
