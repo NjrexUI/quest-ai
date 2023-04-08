@@ -8,11 +8,10 @@ environment:
   sdk: '>=2.19.3 <3.0.0'
 
 dependencies:
-  opencv_4: ^1.0.0
   flutter:
     sdk: flutter
-
-
+  starflut: ^1.0.0
+  chaquopy: ^0.0.19
   cupertino_icons: ^1.0.2
 
 dev_dependencies:
