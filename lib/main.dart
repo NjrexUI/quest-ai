@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:quest/screens/color_display.dart';
 import 'package:quest/screens/first_section.dart';
 
 void main() {

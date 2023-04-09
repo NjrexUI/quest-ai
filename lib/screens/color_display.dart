@@ -14,40 +14,41 @@ class _ColorDisplayState extends State<ColorDisplay> {
   Color containerColor = Colors.red;
 
   final WebSocket _socket = WebSocket("ws://localhost:5000");
-  final bool _isConnected = true;
+  bool _isConnected = true;
   bool isInGame = false;
-  bool isGestured = false;
 
   Future changeColors(bool isGestured) async {
     while (true) {
-      if (!isInGame) {
-        if (isGestured) {
+      if(!isInGame){
+        if(isGestured) {
           isInGame = true;
           await Future.delayed(const Duration(seconds: 3), () {});
-        } else {
-          setState(() {
-            containerColor = Colors.white;
-          });
         }
-      } else {
-        await Future.delayed(const Duration(seconds: 3), () {
+        else {
           setState(() {
-            containerColor = Colors.white;
-          });
+          containerColor = Colors.white;
         });
-        await Future.delayed(const Duration(seconds: 3), () {
-          setState(() {
-            containerColor = Colors.red;
-          });
-        });
+        }
       }
+      else {
+      await Future.delayed(const Duration(seconds: 3), () {
+        setState(() {
+          containerColor = Colors.white;
+        });
+      });
+      await Future.delayed(const Duration(seconds: 3), () {
+        setState(() {
+          containerColor = Colors.red;
+        });
+      });
+    }
     }
   }
 
   @override
   void initState() {
     _socket.connect();
-    changeColors(isGestured);
+    changeColors(true);
     super.initState();
   }
 
@@ -68,22 +69,10 @@ class _ColorDisplayState extends State<ColorDisplay> {
               }
               Map<String, dynamic> response = json.decode(snapshot.data);
               if (response["color"] == "white") isInGame = false;
-              return Column(
-                children: [
-                  Container(
-                    color: containerColor,
-                    width: double.infinity,
-                    height: double.infinity,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        isGestured = true;
-                      });
-                    },
-                    child: const Text("Is playing"),
-                  ),
-                ],
+              return Container(
+                color: containerColor,
+                width: double.infinity,
+                height: double.infinity,
               );
             },
           )
