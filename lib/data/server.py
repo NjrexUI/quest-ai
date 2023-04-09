@@ -3,8 +3,8 @@ import asyncio
 import cv2
 import base64
 import json
-from cvzone.HandTrackingModule import HandDetector
-from cvzone.ClassificationModule import Classifier
+# from cvzone.HandTrackingModule import HandDetector
+# from cvzone.ClassificationModule import Classifier
 import numpy as np
 import math
 
