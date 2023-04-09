@@ -14,7 +14,7 @@ class SecondSection extends StatefulWidget {
 class _SecondSectionState extends State<SecondSection> {
   final WebSocket _socket = WebSocket("ws://localhost:5000");
   bool _isConnected = false;
-  void connect(BuildContext context) async {
+  void connect(BuildContext context) {
     _socket.connect();
     setState(() {
       _isConnected = true;
@@ -32,11 +32,18 @@ class _SecondSectionState extends State<SecondSection> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Live Video"),
+        backgroundColor: Colors.transparent,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
+      backgroundColor: Colors.white.withOpacity(0.1),
+      body: Container(
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/images/scroll.png"), fit: BoxFit.cover),
+        ),
+        padding: const EdgeInsets.symmetric(horizontal: 200, vertical: 100),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -68,7 +75,8 @@ class _SecondSectionState extends State<SecondSection> {
                         );
                       }
                       //? Working for single frames
-                      Map<String, dynamic> response = json.decode(snapshot.data);
+                      Map<String, dynamic> response =
+                          json.decode(snapshot.data);
                       return Image.memory(
                         Uint8List.fromList(
                           base64Decode(
@@ -80,7 +88,7 @@ class _SecondSectionState extends State<SecondSection> {
                       );
                     },
                   )
-                : const Text("Initiate Connection")
+                : const Text("Initiate Connection"),
           ],
         ),
       ),

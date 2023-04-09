@@ -33,12 +33,18 @@ class _FirstSectionState extends State<FirstSection> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Live Video"),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
+      backgroundColor: Colors.white.withOpacity(0.1),
+      body: Container(
+        width: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/scroll.png"),
+            fit: BoxFit.cover
+          ),
+        ),
+        padding: const EdgeInsets.symmetric(horizontal: 200, vertical: 100),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -84,28 +90,33 @@ class _FirstSectionState extends State<FirstSection> {
                     },
                   )
                 : const Text("Initiate Connection"),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SecondSection(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const SecondSection(),
+                        ),
+                      );
+                    },
+                    child: const Text("Go to second stage"),
                   ),
-                );
-              },
-              child: const Text("Go to second stage"),
-            ),
-            ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ColorDisplay(),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const ColorDisplay(),
+                        ),
+                      );
+                    },
+                    child: const Text("Go to colors stage"),
                   ),
-                );
-              },
-              child: const Text("Go to colors stage"),
-            ),
+                ],
+              ),
           ],
         ),
       ),

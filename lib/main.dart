@@ -19,7 +19,7 @@ class _MyAppState extends State<MyApp> {
       title: 'Quest App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.grey,
       ),
       home: const FirstSection(),
     );

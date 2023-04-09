@@ -16,30 +16,32 @@ class _ColorDisplayState extends State<ColorDisplay> {
   final WebSocket _socket = WebSocket("ws://localhost:5000");
   final bool _isConnected = true;
   bool isInGame = false;
-  bool isGestured = false;
+  bool isStarted = false;
+  bool isAccessible = true;
+  late bool isMoving = false;
 
-  Future changeColors(bool isGestured) async {
+  Future changeColors() async {
     while (true) {
-      if (!isInGame) {
-        if (isGestured) {
-          isInGame = true;
-          await Future.delayed(const Duration(seconds: 3), () {});
-        } else {
-          setState(() {
-            containerColor = Colors.white;
-          });
-        }
-      } else {
-        await Future.delayed(const Duration(seconds: 3), () {
-          setState(() {
-            containerColor = Colors.white;
-          });
+      if (!isStarted) {
+        isAccessible = true;
+        setState(() {
+          containerColor = Colors.white;
         });
+        await Future.delayed(const Duration(seconds: 3), () {});
+      } else {
         await Future.delayed(const Duration(seconds: 3), () {
           setState(() {
             containerColor = Colors.red;
           });
         });
+        await Future.delayed(const Duration(seconds: 3), () {
+          setState(() {
+            containerColor = Colors.white;
+          });
+        });
+        if (isMoving) {
+          isStarted = false;
+        }
       }
     }
   }
@@ -47,46 +49,58 @@ class _ColorDisplayState extends State<ColorDisplay> {
   @override
   void initState() {
     _socket.connect();
-    changeColors(isGestured);
+    changeColors();
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
-    return _isConnected
-        ? StreamBuilder(
-            stream: _socket.stream,
-            builder: (context, snapshot) {
-              if (!snapshot.hasData) {
-                return const CircularProgressIndicator();
-              }
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
+      backgroundColor: Colors.white,
+      body: _isConnected
+          ? StreamBuilder(
+              stream: _socket.stream,
+              builder: (context, snapshot) {
+                if (!snapshot.hasData) {
+                  return const CircularProgressIndicator();
+                }
 
-              if (snapshot.connectionState == ConnectionState.done) {
-                return const Center(
-                  child: Text("Connection Closed !"),
+                if (snapshot.connectionState == ConnectionState.done) {
+                  return const Center(
+                    child: Text("Connection Closed !"),
+                  );
+                }
+                Map<String, dynamic> response = json.decode(snapshot.data);
+                isMoving = response["color"] == "white";
+                return Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    const Text(
+                      "This is the game where in order to win you have to not move. Be patient and wait!",
+                      style: TextStyle(fontFamily: "Alkatra", fontSize: 24),
+                    ),
+                    Container(
+                      color: containerColor,
+                      width: double.infinity,
+                      height: MediaQuery.of(context).size.height * 0.75,
+                    ),
+                    isAccessible
+                        ? ElevatedButton(
+                            onPressed: () {
+                              isStarted = true;
+                              isAccessible = false;
+                            },
+                            child: const Text("Start the game!"),
+                          )
+                        : Container()
+                  ],
                 );
-              }
-              Map<String, dynamic> response = json.decode(snapshot.data);
-              if (response["color"] == "white") isInGame = false;
-              return Column(
-                children: [
-                  Container(
-                    color: containerColor,
-                    width: double.infinity,
-                    height: double.infinity,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        isGestured = true;
-                      });
-                    },
-                    child: const Text("Is playing"),
-                  ),
-                ],
-              );
-            },
-          )
-        : const Text("Initiate Connection");
+              },
+            )
+          : const Text("Initiate Connection"),
+    );
   }
 }
