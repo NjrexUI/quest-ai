@@ -1,16 +1,16 @@
 # quest
 
-A new Flutter project.
+Десктопное приложение комбинированное написанное на фреймворке Flutter, комбинированное с Python скриптами, 
+которые и анализируют потоковое видео, созданное для парков аттракционов и квестов. 
 
-## Getting Started
+Для того, чтобы запустить приложение: 
+1. Создайте виртуальную среду используя pipenv и запустите ее следующими командами:
+   pip install pipenv
+   pipenv install
+   pipenv shell
+2. Запустите сервер (файл server.py) находящийся в папке data следующей командой: 
+   python server.py
+3. Запустите main.dart файл Flutter приложения 
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Надеемся, что вы посчитаете данный проект полезным и интересным.
+Благодарим за внимание!
