@@ -20,6 +20,7 @@ async def transmit(websocket, path):
         while cap.isOpened():
             color = ""
             
+            # Create outline
             ret, frame = cap.read()
             if ret == True:
                 gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
@@ -28,6 +29,7 @@ async def transmit(websocket, path):
             gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
             edges_high_thresh = cv2.Canny(gray, 60, 120)
 
+            #Create movement detection    
             diff = cv2.absdiff(frame1, frame2)
             gray = cv2.cvtColor(diff, cv2.COLOR_BGR2GRAY)
             blur = cv2.GaussianBlur(gray, (5,5), 0)
