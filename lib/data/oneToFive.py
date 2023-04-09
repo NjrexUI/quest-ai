@@ -6,7 +6,7 @@ import math
  
 cap = cv2.VideoCapture(0)
 detector = HandDetector(maxHands=1)
-classifier = Classifier("Model1/keras_model.h5", "Model1/labels.txt")
+classifier = Classifier("C:\GitHub\quest-ai\lib\data\Model1\keras_model.h5", "C:\GitHub\quest-ai\lib\data\Model1\labels.txt")
  
 offset = 20
 imgSize = 300
@@ -14,7 +14,7 @@ imgSize = 300
 folder = "Data/C"
 counter = 0
  
-labels = ["A", "B", "C"]
+labels = ["A", "B", "C", "D", "E"]
  
 while True:
     success, img = cap.read()
