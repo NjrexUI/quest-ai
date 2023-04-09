@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="16.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\GitHub\quest-ai\build\windows\CMakeFiles\b16afd02e32bbdcfd717adba56b3bac4\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{DCEC76F0-0701-3B82-9237-58C020562466}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

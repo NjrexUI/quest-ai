@@ -1,0 +1,10 @@
+^C:\GITHUB\QUEST-AI\BUILD\WINDOWS\CMAKEFILES\B16AFD02E32BBDCFD717ADBA56B3BAC4\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\CMake\bin\cmake.exe" -SC:/GitHub/quest-ai/windows -BC:/GitHub/quest-ai/build/windows --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/GitHub/quest-ai/build/windows/quest.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

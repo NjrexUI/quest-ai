@@ -1,0 +1,11 @@
+C:/GitHub/quest-ai/build/windows/runner/Debug/data/icudtl.dat
+C:/GitHub/quest-ai/build/windows/runner/Debug/flutter_windows.dll
+C:/GitHub/quest-ai/build/windows/runner/Debug/data/flutter_assets/AssetManifest.json
+C:/GitHub/quest-ai/build/windows/runner/Debug/data/flutter_assets/assets/fonts/Alkatra-Regular.ttf
+C:/GitHub/quest-ai/build/windows/runner/Debug/data/flutter_assets/assets/images/scroll.png
+C:/GitHub/quest-ai/build/windows/runner/Debug/data/flutter_assets/FontManifest.json
+C:/GitHub/quest-ai/build/windows/runner/Debug/data/flutter_assets/fonts/MaterialIcons-Regular.otf
+C:/GitHub/quest-ai/build/windows/runner/Debug/data/flutter_assets/kernel_blob.bin
+C:/GitHub/quest-ai/build/windows/runner/Debug/data/flutter_assets/NOTICES.Z
+C:/GitHub/quest-ai/build/windows/runner/Debug/data/flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf
+C:/GitHub/quest-ai/build/windows/runner/Debug/data/flutter_assets/shaders/ink_sparkle.frag
