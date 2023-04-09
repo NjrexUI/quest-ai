@@ -68,13 +68,20 @@ class _ColorDisplayState extends State<ColorDisplay> {
               }
               Map<String, dynamic> response = json.decode(snapshot.data);
               if (response["color"] == "white") isInGame = false;
-              if (response["gesture"] == "A") isGestured = true;   
               return Column(
                 children: [
                   Container(
                     color: containerColor,
                     width: double.infinity,
                     height: double.infinity,
+                  ),
+                  ElevatedButton(
+                    onPressed: () {
+                      setState(() {
+                        isGestured = true;
+                      });
+                    },
+                    child: const Text("Is playing"),
                   ),
                 ],
               );
